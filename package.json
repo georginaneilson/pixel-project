@@ -39,6 +39,7 @@
     "gulp-uncss": "^1.0.1",
     "gulp-zip": "^3.2.0",
     "merge-stream": "^1.0.0",
+    "rimraf": "^2.3.3",
     "siphon-media-query": "^1.0.0",
     "yargs": "^4.1.0"
   },
