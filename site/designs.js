@@ -1,65 +1,47 @@
 $(document).ready(function() {
-  console.log("document ready");
+  console.log('document ready');
+  let color = $("#colorPicker").val();
+  console.log(color);
 
 
-  $("#buttonSubmit").click(function(e) {
+  //makegrid function
+  $('#buttonSubmit').click(function makegrid(e) {
     e.preventDefault();
-    console.log("button submitted");
-    $( "#pixelCanvas" ).empty();
-    console.log("canvas cleared?")
-    const height = $("#inputHeight").val();
-    const width = $("#inputWidth").val();
-    console.log(height + " " + width);
-
-    var i;
-    if (height < 1) {
-      console.log("less than 1")
-    } else {
-
-      var heightOutput = "";
-      for (i = 0; i < height; i++) {
-        heightOutput += "<tr></tr>\n";
-        console.log(heightOutput);
-
+    $('#pixelCanvas').empty();
+    const height = $('#inputHeight').val();
+    const width = $('#inputWidth').val();
+    if (height < 1) {} else {
+      var heightOutput = '';
+      for (let i = 0; i < height; i++) {
+        heightOutput += '<tr></tr>\n';
       }
-
-      if (width < 1) {
-        console.log("width less than 1")
-      } else {
-
-        var widthOutput = "";
-        for (i = 0; i < width; i++) {
-          widthOutput += "<td></td>";
-          console.log(widthOutput);
-
+      if (width < 1) {} else {
+        var widthOutput = '';
+        for (let i = 0; i < width; i++) {
+          widthOutput += '<td></td>';
         }
       }
-
-
-      $( "#pixelCanvas" ).append(heightOutput);
-      $( "tr" ).append(widthOutput);
+      $('#pixelCanvas').append(heightOutput);
+      $('tr').append(widthOutput);
     }
-
   });
 
 
-  function makeGrid() {
-    console.log("makegrid")
-    // var i;
-    // if (height < 1) {
-    //   console.log("less than 1")
-    // } else {
-    //   for (i = 0; i < height; i++) {
-    //     let heightOutput;
-    //     heightOutput + ("<tr></tr>" + \n)
-    //     console.log("more than one!")
-    //   }
-    // }
+  // Select color input
+  $("#colorPicker").change(function() {
+    color = $("#colorPicker").val();
+    console.log('The new color is ' + color);
+    //$("h1").css('background', $(this).val());
+  });
 
-  }
+  $("p").on('click', function() {
+
+    console.log('The cell color should be ' + color);
+    //$("h1").css('background', $(this).val());
+  });
+
 
 });
 
 
-// Select color input
 // Select size input

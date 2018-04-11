@@ -1,3 +1,5 @@
+@import "grid.scss";
+
 body {
     text-align: center;
 }
@@ -28,11 +30,11 @@ table {
 }
 
 tr {
-    height: 20px;
+    height: 15px;
 }
 
 td {
-    width: 20px;
+    width: 12.5px;
 }
 
 input[type=number] {
