@@ -1,11 +1,11 @@
 @import "grid.scss";
-
+@import url('https://fonts.googleapis.com/css?family=VT323');
 body {
     text-align: center;
 }
 
 h1 {
-    //font-family: Monoton;
+    font-family: 'VT323', monospace;
     font-size: 70px;
     margin: 0.2em;
 }
@@ -39,4 +39,8 @@ td {
 
 input[type=number] {
     width: 6em;
+}
+.error{
+  display: none;
+  color: red;
 }

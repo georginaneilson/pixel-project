@@ -1,47 +1,36 @@
 $(document).ready(function() {
-  console.log('document ready');
-  let color = $("#colorPicker").val();
-  console.log(color);
-
-
-  //makegrid function
-  $('#buttonSubmit').click(function makegrid(e) {
-    e.preventDefault();
-    $('#pixelCanvas').empty();
-    const height = $('#inputHeight').val();
-    const width = $('#inputWidth').val();
-    if (height < 1) {} else {
-      var heightOutput = '';
-      for (let i = 0; i < height; i++) {
-        heightOutput += '<tr></tr>\n';
+  //Get default color value
+  let color = $('#colorPicker').val();
+  const pixelCanvas = $('#pixelCanvas');
+  //Create the pixel grid
+  $('#buttonSubmit').on('click', function makegrid(event) {
+    //prevent the default submit action
+    event.preventDefault();
+    //Clear the grid on submit
+    pixelCanvas.empty();
+    const inputHeight = $('#inputHeight').val();
+    const inputWidth = $('#inputWidth').val();
+    for (let tableHeight = 1; tableHeight <= inputHeight; tableHeight++) {
+      let tableRow = '';
+      let tableData = '';
+      let tableWidth = 1;
+      while (tableWidth <= inputWidth) {
+        tableData += '<td></td>';
+        tableWidth ++;
       }
-      if (width < 1) {} else {
-        var widthOutput = '';
-        for (let i = 0; i < width; i++) {
-          widthOutput += '<td></td>';
-        }
-      }
-      $('#pixelCanvas').append(heightOutput);
-      $('tr').append(widthOutput);
+      tableRow = '<tr>' + tableData + '</tr>'
+      pixelCanvas.append(tableRow);
     }
   });
 
-
-  // Select color input
-  $("#colorPicker").change(function() {
-    color = $("#colorPicker").val();
-    console.log('The new color is ' + color);
-    //$("h1").css('background', $(this).val());
+  // Get color value
+  $('#colorPicker').on('change', function() {
+    color = $(this).val();
   });
 
-  $("p").on('click', function() {
-
-    console.log('The cell color should be ' + color);
-    //$("h1").css('background', $(this).val());
+  //Change background color of the clicked td
+  pixelCanvas.on('click', 'td', function() {
+    $(this).css('background-color', color);
   });
-
 
 });
-
-
-// Select size input
