@@ -15,7 +15,7 @@ import rimraf from 'rimraf'
 const $ = plugins();
 
 gulp.task('build',
-  gulp.series(sass, pages, js));
+  gulp.series(clean, sass, pages, js, assets));
 
 gulp.task('default',
   gulp.series('build', server, watch));
@@ -35,6 +35,13 @@ function sass() {
 
     .pipe(gulp.dest('site'));
 }
+
+//Pipe assets into the site folder
+function assets() {
+  return gulp.src('assets/**/*')
+    .pipe(gulp.dest('site/assets'));
+}
+
 
 //Pipe html into the site folder
 function pages() {
@@ -59,6 +66,7 @@ function server(done) {
 
 //Watch for file changes
 function watch() {
+  gulp.watch('assets/**/*').on('all', gulp.series(assets, browser.reload));
   gulp.watch('*.html').on('all', gulp.series(pages, browser.reload));
   gulp.watch('*.scss').on('all', gulp.series(sass, pages, browser.reload));
   gulp.watch('*.js').on('all', gulp.series(sass, js, browser.reload));
