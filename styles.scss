@@ -1,66 +1,71 @@
-//@import "grid.scss";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Press+Start+2P');
-
+@import url( 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Press+Start+2P');
 $violet: #6A82FB;
 $violet--dark: #445299;
 
 body {
-    text-align: center;
-    margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
-.hero{
+.hero {
   padding: 34px;
-  background: #FC5C7D;  /* fallback for old browsers */
+  background: #FC5C7D;
+  /* fallback for old browsers */
   background: -webkit-linear-gradient(left, #6A82FB, #FC5C7D);
   background: -o-linear-gradient(left, #6A82FB, #FC5C7D);
   background: linear-gradient(to right, #6A82FB, #FC5C7D);
 
-h1 {
+  h1 {
     font-family: 'Press Start 2P', monospace;
     font-size: 70px;
     margin: 0.2em;
     text-align: center;
     color: white;
     text-shadow: 2px 6px #000;
-}
+  }
 }
 
 h2 {
-    margin: 1em 0 0.25em;
+  margin: 1em 0 0.25em;
 }
 
 h2:first-of-type {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 table,
-tr,
-td {
-    border: 1px solid black;
+td,
+tr {
+  border: 1px solid black;
 }
 
 table {
-    border-collapse: collapse;
-    margin: 0 auto;
+  border-collapse: collapse;
+  margin: 0 auto;
 }
 
 tr {
-    height: 15px;
+  height: 15px;
 }
 
 td {
-    width: 12.5px;
+  width: 12.5px;
 }
 
 input[type=number] {
-    width: 6em;
+  width: 6em;
 }
 
-textarea, input, button { outline: none; }
-.button-wrapper{
+button,
+input,
+textarea {
+  outline: none;
+}
+
+.button-wrapper {
   padding: 14px 0;
 }
+
 .button {
   background-color: $violet;
   color: #fff;
@@ -69,22 +74,20 @@ textarea, input, button { outline: none; }
   padding: 7px 14px;
   font-size: 16px;
   display: block;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 4px auto;
   text-align: center;
   transition: all 0.2s ease;
+
   &:hover {
     margin-top: 3px;
     margin-bottom: 5px;
-    box-shadow: 0px 2px 7px 1px rgba(229,229,229,1);
+    box-shadow: 0 2px 7px 1px rgba(229,229,229,1);
     background-color: $violet--dark;
     border: 1px solid $violet--dark;
-
   }
+
   &:active {
-    box-shadow: 0px 2px 17px 1px rgba(229,229,229,1);
+    box-shadow: 0 2px 17px 1px rgba(229,229,229,1);
     background-color: desaturate($violet--dark, 20%);
     border: 1px solid desaturate($violet--dark, 20%);
   }

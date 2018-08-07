@@ -16,7 +16,7 @@ $(document).ready(function() {
       let tableWidth = 1;
       while (tableWidth <= inputWidth) {
         tableData += '<td></td>';
-        tableWidth ++;
+        tableWidth++;
       }
       tableRow = '<tr>' + tableData + '</tr>'
       pixelCanvas.append(tableRow);

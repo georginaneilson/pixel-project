@@ -25,8 +25,8 @@ h2:first-of-type {
   margin-top: 0.5em; }
 
 table,
-tr,
-td {
+td,
+tr {
   border: 1px solid black; }
 
 table {
@@ -42,7 +42,9 @@ td {
 input[type=number] {
   width: 6em; }
 
-textarea, input, button {
+button,
+input,
+textarea {
   outline: none; }
 
 .button-wrapper {
@@ -56,19 +58,16 @@ textarea, input, button {
   padding: 7px 14px;
   font-size: 16px;
   display: block;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 4px auto;
   text-align: center;
   transition: all 0.2s ease; }
   .button:hover {
     margin-top: 3px;
     margin-bottom: 5px;
-    box-shadow: 0px 2px 7px 1px #e5e5e5;
+    box-shadow: 0 2px 7px 1px #e5e5e5;
     background-color: #445299;
     border: 1px solid #445299; }
   .button:active {
-    box-shadow: 0px 2px 17px 1px #e5e5e5;
+    box-shadow: 0 2px 17px 1px #e5e5e5;
     background-color: #5a6183;
     border: 1px solid #5a6183; }
